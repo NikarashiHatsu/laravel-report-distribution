@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -59,8 +60,11 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
+        $last_distributed_reports = collect((new Report)->with('last_distribution')->get())->where('last_distribution.destination_id', $destination->id);
+        
         return view('destination.show', [
-            'destination' => $destination
+            'destination' => $destination,
+            'last_distributed_reports' => $last_distributed_reports
         ]);
     }
 
