@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
+
+a {
+    @apply block underline mb-2 text-purple-700;
+}
+
+input, select {
+    @apply px-4 py-2 rounded border;
+}
+
+hr {
+    @apply my-4;
+}
+
+h3 {
+    @apply font-semibold my-2 text-2xl;
+}
+
+button[type='submit'] {
+    @apply underline text-red-700;
+}
+
+body {
+    @apply max-w-4xl mx-auto;
+}
+
+table {
+    @apply w-full my-4 text-xs;
+}
+
+td, th {
+    @apply py-2 border px-4;
+}
+
 @tailwind utilities;
