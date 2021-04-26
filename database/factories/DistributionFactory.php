@@ -22,8 +22,9 @@ class DistributionFactory extends Factory
     public function definition()
     {
         return [
-            'destination_id' => $this->faker->numberBetween(1, 5),
-            'report_id' => $this->faker->numberBetween(1, 250),
+            'destination_id' => $this->faker->numberBetween(1, 25),
+            'report_id' => $this->faker->numberBetween(1, 1250),
+            'deleted_at' => rand(0, 1) ? now() : null
         ];
     }
 }

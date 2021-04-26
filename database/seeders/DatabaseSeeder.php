@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Destination::factory()->count(5)->create();
-        Report::factory()->count(250)->create();
-        Distribution::factory()->count(1000)->create();
+        Destination::factory()->count(25)->create();
+        Report::factory()->count(1250)->create();
+        Distribution::factory()->count(10000)->create();
     }
 }
