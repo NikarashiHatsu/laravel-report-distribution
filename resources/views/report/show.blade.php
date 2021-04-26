@@ -91,9 +91,15 @@
                                     </span>
                                 </i>
                             @else
-                                <i style="color: green;">
-                                    Diproses
-                                </i>
+                                @if ($loop->last)
+                                    <i style="color: gray;">
+                                        Diproses
+                                    </i>
+                                @else
+                                    <i style="color: green;">
+                                        Laporan diteruskan ke {{ $report->distributions_log[$loop->iteration]->destination->destination }}
+                                    </i>
+                                @endif
                             @endif
                         </td>
                     </tr>
